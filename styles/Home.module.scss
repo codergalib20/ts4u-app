@@ -1,0 +1,408 @@
+$primary_color: #062539;
+$white_color: #ffffff;
+$white_gray_color: #dddddd;
+$gray_color: #a3a3a3;
+@mixin flex($display, $justify, $align) {
+  display: $display;
+  align-items: $justify;
+  justify-content: $align;
+}
+//============Banner Styles=============
+.banner {
+  background: $primary_color;
+  min-height: 600px;
+  position: relative;
+  z-index: 80;
+}
+.banner_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  .banner_info {
+    padding-bottom: 100px;
+    .title {
+      font-size: 40px;
+      font-weight: 600;
+      color: $white_color;
+      text-transform: uppercase;
+      line-height: 50px;
+    }
+    .desc {
+      font-size: 1.1rem;
+      color: $white_gray_color;
+      padding: 1rem 0;
+      font-weight: 500;
+    }
+    .search_box {
+      @include flex(flex, stretch, space-between);
+      width: 90%;
+      border: 2px solid $white_color;
+      padding: 0.2rem;
+      border-radius: 50px;
+      span {
+        font-size: 1.6rem;
+        color: $white_color;
+        width: 15%;
+        @include flex(flex, center, center);
+      }
+      input {
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.2rem;
+        padding: 0.4rem 0;
+        width: 60%;
+        color: $white_color;
+        &::placeholder {
+          color: $gray_color;
+        }
+      }
+      button {
+        width: 25%;
+        background: $white_color;
+        outline: none;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        padding: 1rem 0;
+        cursor: pointer;
+      }
+    }
+  }
+  .banner_image {
+    z-index: 80;
+  }
+}
+// ============Banner Bottom Components============
+.banner_bottom {
+  padding: 30px 0;
+  position: absolute;
+  bottom: -90px;
+  z-index: 85;
+  width: 100%;
+  .section_one {
+    background: transparent;
+    .section_one_wrapper {
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      .countdown {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $primary_color;
+        position: relative;
+        z-index: 80;
+        padding: 20px 0;
+        padding-right: 50px;
+        h1 {
+          color: #0eb2d5;
+          font-weight: 400;
+          text-align: center;
+        }
+        span {
+          color: $primary_color;
+          font-weight: 600;
+          font-size: 1rem;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -170px;
+          width: 140%;
+          height: 100%;
+          background: $white_color;
+          transform: skewX(59deg);
+          z-index: -80;
+        }
+      }
+    }
+  }
+  .section_two {
+    background: $white_color;
+    padding: 40px 0;
+  }
+}
+// ==============Partnership==============
+.partnership {
+  padding: 70px 0;
+  h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: $primary_color;
+    text-align: center;
+    padding-bottom: 1.4rem;
+  }
+  .partnership_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+// ==============Welcome Component==============
+.welcome_section {
+  padding: 30px 0;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    .image {
+      text-align: center;
+      position: relative;
+      .img {
+        position: relative;
+        text-align: center;
+        img {
+          min-width: 91% !important;
+          max-width: 91% !important;
+          top: -70px !important;
+          left: 51px !important;
+        }
+        .back_box {
+          background: $primary_color;
+          width: 350px;
+          height: 350px;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          border-radius: 35px;
+          border-top-right-radius: 150px;
+        }
+        .badge {
+          position: absolute;
+          bottom: 60px;
+          left: -18px;
+        }
+        .chart {
+          position: absolute;
+          bottom: 0;
+          right: 50px;
+        }
+      }
+    }
+    .info {
+      h2 {
+        font-size: 33px;
+        color: $primary_color;
+      }
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: $primary_color;
+        padding: 1.5rem 0;
+      }
+      button {
+        background: $primary_color;
+        color: #fff;
+        padding: 0.6rem 1.5rem;
+        font-weight: 600;
+        border-radius: 50px;
+        font-size: 1rem;
+        @include flex(flex, center, space-between);
+        outline: none;
+        border: none;
+        border: 2px solid $primary_color;
+        transition: all 0.4s linear;
+        cursor: pointer;
+        &:hover {
+          color: $primary_color;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+
+// ==============Best Content Component==============
+.best_content {
+  padding: 2rem 0;
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    .info {
+      h2 {
+        font-size: 30px;
+        color: $primary_color;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1rem;
+        color: $primary_color;
+        padding: 0.4rem 0;
+      }
+      button {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $primary_color;
+        border: 2px solid $primary_color;
+        background: transparent;
+        transition: all 0.3s linear;
+        outline: none;
+        @include flex(flex, center, space-between);
+        padding: 0.7rem 1.4rem;
+        border-radius: 50px;
+        margin-top: 2rem;
+        cursor: pointer;
+        text-shadow: 0 4px 4px $primary_color;
+        &:hover {
+          color: $white_color;
+          background: $primary_color;
+          box-sizing: 3px 3px 2px 3px $primary_color;
+        }
+      }
+    }
+    .image {
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+//  Facilities Component______________________
+.our_facilities {
+  background: $primary_color;
+  padding: 70px 0;
+  .header {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    color: $white_color;
+    h1 {
+      text-transform: uppercase;
+    }
+    p {
+      padding: 2rem 0;
+    }
+  }
+  .boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    .facilitie_box {
+      padding: 1rem;
+      .image {
+        padding: 1rem;
+        img {
+          width: 100px;
+        }
+      }
+      .info {
+        h2 {
+          font-weight: 500;
+          color: $white_color;
+        }
+        p {
+          color: $white_gray_color;
+          font-weight: 400;
+          padding: 1rem 0;
+        }
+      }
+    }
+  }
+}
+
+// Responsive section=========================
+@media only screen and (max-width: 1090px) {
+  .boxes {
+    display: flex !important;
+    flex-wrap: wrap;
+    .facilitie_box {
+      width: 50%;
+      padding: 2rem 1rem !important;
+      &:nth-child(1) {
+        order: 1;
+      }
+      &:nth-child(2) {
+        order: 1;
+      }
+      &:nth-child(3) {
+        order: 4;
+      }
+      &:nth-child(4) {
+        order: 3;
+      }
+      &:nth-child(5) {
+        order: 5;
+      }
+      &:nth-child(6) {
+        order: 6;
+      }
+    }
+  }
+}
+// Responsive section=========================
+@media only screen and (max-width: 950px) {
+  .banner_wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .countdown {
+    background: transparent !important;
+    &::after {
+      left: -100px !important;
+    }
+  }
+  .partnership_wrapper {
+    display: grid !important;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .welcome_section {
+    .wrapper {
+      display: grid !important;
+      grid-template-columns: 1fr;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  .best_content {
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+// ===============================
+@media only screen and (max-width: 550px) {
+  .partnership_wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+  .welcome_section {
+    .info {
+      margin-top: 5rem;
+      text-align: justify;
+    }
+  }
+  .best_content {
+    .wrapper {
+      text-align: justify;
+    }
+  }
+  .facilitie_box {
+    width: 100% !important;
+    &:nth-child(1) {
+      order: 1 !important;
+    }
+    &:nth-child(2) {
+      order: 2 !important;
+    }
+    &:nth-child(3) {
+      order: 3 !important;
+    }
+    &:nth-child(4) {
+      order: 4 !important;
+    }
+    &:nth-child(5) {
+      order: 5 !important;
+    }
+    &:nth-child(6) {
+      order: 6 !important;
+    }
+  }
+}
